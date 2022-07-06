@@ -40,18 +40,26 @@ L.control.layers(baseMaps).addTo(map)
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
 
+let earthquakeData = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+
 // Create a style for the lines.
 let myStyle = {
-  color: "#ffffa1",
+  shape: "circle",
+  color: "#ffa500",
   weight: 2
 }
 
 // Grabbing our GeoJSON data.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data).addTo(map);
+  earthquakeData.forEach(function(coordinates) {
+      console.log(coordinates)
+      L.circleMarker(coordinates.place, {
+        radius: coordinates.mag
+      })
+  .addTo(map);
+  })
 });
-
 
 
 // // Add GeoJSON data.
@@ -127,8 +135,4 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
    // })
    // .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
    // .addTo(map);
-//});
-
-
-
-
+//)};
