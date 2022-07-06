@@ -35,10 +35,10 @@ L.control.layers(baseMaps).addTo(map)
 // let torontoData = "https://raw.githubusercontent.com/TMWRose/Mapping_Earthquakes/Mapping_GeoJSON_Linestring/Mapping_GeoJSON_Linestring/static/js/torontoRoutes.json";
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/<GitHub_name>/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/TMWRose/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/Mapping_GeoJSON_Polygons/static/js/torontoNeighborhoods.json";
 
 // Then we add our 'graymap' tile layer to the map.
-light.addTo(map);
+streets.addTo(map);
 
 // Create a style for the lines.
 let myStyle = {
