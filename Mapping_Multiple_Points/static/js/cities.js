@@ -1,0 +1,1 @@
+<script type="text/javascript" src="static/js/cities.js"></script>
